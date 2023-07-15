@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Abbreviation Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Abbreviation Converter</h2>
+    <div class="form-group">
+      <label for="abbreviation">Abbreviation:</label>
+      <input type="text" id="abbreviation" placeholder="Enter an abbreviation">
+    </div>
+    <button id="convertBtn">Convert</button>
+    <div id="result"></div>
+    <div id="error"></div>
+  </div>
+
+  <script>
+    const convertBtn = document.getElementById('convertBtn');
+    const abbreviationInput = document.getElementById('abbreviation');
+    const resultDiv = document.getElementById('result');
+    const errorDiv = document.getElementById('error');
+
+    convertBtn.addEventListener('click', () => {
+      const abbreviation = abbreviationInput.value.trim();
+      
+      if (abbreviation === '') {
+        errorDiv.textContent = 'Please enter an abbreviation.';
+        resultDiv.textContent = '';
+        return;
+      }
+
+      errorDiv.textContent = '';
+
+      fetch(`http://localhost:7000/api/abbreviation/${encodeURIComponent(abbreviation)}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Abbreviation not found');
+          }
+          return response.json();
+        })
+        .then(data => {
+          resultDiv.textContent = `Full Name: ${data.fullName}`;
+        })
+        .catch(error => {
+          resultDiv.textContent = '';
+          errorDiv.textContent = error.message;
+        });
+    });
+  </script>
+</body>
+</html>
