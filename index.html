@@ -14,7 +14,7 @@
     }
 
     .form-group {
-      margin-bottom: 10px;
+      margin-bottom: 9px;
     }
 
     .form-group label {
@@ -77,7 +77,7 @@
           return response.json();
         })
         .then(data => {
-          resultDiv.textContent = `Full Name: ${data.fullName}`;
+          resultDiv.textContent = `Meaning: ${data.fullName}`;
         })
         .catch(error => {
           resultDiv.textContent = '';
