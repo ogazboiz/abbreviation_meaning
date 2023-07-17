@@ -2,52 +2,42 @@
 <html>
 <head>
   <title>Abbreviation Converter</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
     }
-
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 10px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 5px;
-      font-size: 16px;
-    }
-
-    #result {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    #error {
-      color: red;
-      font-weight: bold;
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      *{
+        font-family: 'Montserrat', sans-serif;
+      }
     }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+ 
 </head>
 <body>
-  <div class="container">
-    <h2>Abbreviation Converter</h2>
-    <div class="form-group">
+  <div class="container bg-gray-100 bg-opacity-50 scale-125 text-white flex flex-col p-2 space-y-5 justify-center items-center min-h-screen min-w-full bg-gray-100 bg-cover bg-center bg-no-repeat h-screen fixed inset-0 overflow-hidden" style="background-image: url('./niket-nigde-9N3rS-xLfkI-unsplash.jpg')">
+    <h2 class="text-3xl md: text-6xl ">Abbreviation Converter</h2>
+    <div class="form-group p-2 md: text-3xl space-y-5 ">
       <label for="abbreviation">Abbreviation:</label>
-      <input type="text" id="abbreviation" placeholder="Enter an abbreviation">
+      <input type="text" id="abbreviation" placeholder="Enter an abbreviation" class="p-2 rounded-md bg-gray-100 border border-gray-500 text-black">
     </div>
-    <button id="convertBtn">Convert</button>
+    <button id="convertBtn" class="bg-red-500 rounded-md text-white p-2 transform scale-125 md: h-12 w-28">Convert</button>
     <div id="result"></div>
     <div id="error"></div>
   </div>
