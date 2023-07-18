@@ -17,6 +17,11 @@
     }
     .btnStyle{
       margin-left: 10px;
+      background-color: #ACD2ED;
+      color: #0A210F;
+      font-size: 22px;
+      font-weight: 400;
+      border-radius: 10px;
     }
     h1 {
       text-align: center;
@@ -63,6 +68,8 @@
 
     .search {
       margin: auto;
+     
+      
     }
     .search-content{
       margin: 20% 0;
@@ -209,7 +216,7 @@
         <div class="text-center search-content ">
           <div class="d-flex">
             <input type="text" id="abbreviation" class="abbreviation" placeholder="Enter an abbreviation" class="search">
-            <button id="convertBtn" class="btn  text-center btnStyle" type="button">Convert</button>
+            <button id="convertBtn" class="btn  text-center btnStyle " type="button">Find</button>
           </div>
           <div id="result" class="text-center"></div>
           <div id="error" class="h5"></div>
@@ -219,10 +226,10 @@
     <div class="row content-row2">
       <div class="col col-lg-6 col-sm-12">
         <p style="font-size: 35px;" class="content text-center">
-          An open source slang dictionary is called Abbreive (A-brei-ve).for the community, and curated by the community.</p>
+          An open source <span style="color: #E1E289;">slang</span>  dictionary is called <span style="color: #E1E289;">Abbreive (A-brei-ve)</span>.for the community, and curated by the community.</p>
       </div>
       <div class="col col-lg-6 col-sm-12">
-        <div class="twitter"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt="" class="h-12 w-12 rounded-full"><div><a href="https://twitter.com/Nateemerson/status/1567566265719599105?s=20&amp;t=QAOQu1feHo07evNBHFvAIQ" class="text-purple dark:text-deeppurple"><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
+        <div class="twitter" style="transform: rotate(5deg)"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt="" class="h-12 w-12 rounded-full"><div><a href="https://twitter.com/Bayo_6?s=20" class="text-purple dark:text-deeppurple"><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
       </div>
     </div>
   </div>
@@ -233,7 +240,7 @@
     const resultDiv = document.getElementById('result');
     const errorDiv = document.getElementById('error');
 
-    convertBtn.addEventListener('click', () => {
+    function searchAbbreviation() {
       const abbreviation = abbreviationInput.value.trim();
       
       if (abbreviation === '') {
@@ -258,6 +265,14 @@
           resultDiv.textContent = '';
           errorDiv.textContent = error.message;
         });
+    }
+
+    convertBtn.addEventListener('click', searchAbbreviation);
+
+    abbreviationInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        searchAbbreviation();
+      }
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

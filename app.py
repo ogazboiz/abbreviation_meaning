@@ -508,7 +508,7 @@ abbreviations = {
     'OTL': 'Out to Lunch',
     'OTP': 'One True Pairing',
     'OW': 'Overwatch',
-    'P': 'Parent',
+    'P': 'Problem',
     'PA': 'Pennsylvania',
     'PANIC': 'PANC',
     'PC': 'Personal Computer',
@@ -768,4 +768,4 @@ def get_abbreviation(abbr):
 
 # Start the server
 if __name__ == '__main__':
-    app.run(port=7000)
+    app.run( debug=True, port=7000)
