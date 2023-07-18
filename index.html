@@ -6,12 +6,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ba9ed74b87.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding-top: 60px;
       font-size: xx-large;
       color: #ACD2ED;
+      padding-top: 20px;
       background-color: #0A210F;
     }
     .btnStyle{
@@ -48,6 +49,7 @@
     }
 
     .cont {
+      padding-top: 50px;
       margin: 0 auto;
       width: 70%;
     }
@@ -63,9 +65,6 @@
       margin: auto;
     }
     .search-content{
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
       margin: 20% 0;
     }
 
@@ -177,8 +176,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <nav class="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="font-family: 'Lobster', cursive; color: #acd2ed; padding: 0 20px;" ><h1>Abbreive</h1></a>
+      
+      <section class="d-flex" style="padding: 0 20px;">
+        <a href="https://github.com/ogazboiz"><i class="fa-brands fa-github" style="color: #acd2ed;"></i></a>
+      </section>
+    </div>
+  </nav>
 </head>
 <body>
+  
   <div class="cont container-fluid">
     <h1 class="display-1">Writing on The Internet</h1>
     <h1 class="display-3 dis">Slang change all the time JSYK</h1>
@@ -197,11 +206,13 @@
         <p style="font-size: 14px; color: #99AA38;" class="content">Abbreviations are currently one-way. For instance, the translation of Idk is merely "I don't know," not the other way around.</p>
       </div>
       <div class="col col-lg-6 col-sm-12">
-        <div class="text-center search-content">
-          <input type="text" id="abbreviation" class="abbreviation" placeholder="Enter an abbreviation" class="search">
-          <button id="convertBtn" class="btn btn-primary text-center btnStyle" type="button">Convert</button>
+        <div class="text-center search-content ">
+          <div class="d-flex">
+            <input type="text" id="abbreviation" class="abbreviation" placeholder="Enter an abbreviation" class="search">
+            <button id="convertBtn" class="btn  text-center btnStyle" type="button">Convert</button>
+          </div>
           <div id="result" class="text-center"></div>
-          <div id="error"></div>
+          <div id="error" class="h5"></div>
         </div>
       </div>
     </div>
@@ -211,7 +222,7 @@
           An open source slang dictionary is called Abbreive (A-brei-ve).for the community, and curated by the community.</p>
       </div>
       <div class="col col-lg-6 col-sm-12">
-        <div class="twitter"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt="" class="h-12 w-12 rounded-full"><div><a href="https://twitter.com/Nateemerson/status/1567566265719599105?s=20&amp;t=QAOQu1feHo07evNBHFvAIQ" class="text-purple dark:text-deeppurple"><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@DunsinWebDev and @njongemy</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
+        <div class="twitter"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt="" class="h-12 w-12 rounded-full"><div><a href="https://twitter.com/Nateemerson/status/1567566265719599105?s=20&amp;t=QAOQu1feHo07evNBHFvAIQ" class="text-purple dark:text-deeppurple"><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
       </div>
     </div>
   </div>
@@ -236,7 +247,7 @@
       fetch(`http://localhost:7000/api/abbreviation/${encodeURIComponent(abbreviation)}`)
         .then(response => {
           if (!response.ok) {
-            throw new Error('Abbreviation not found');
+            throw new Error('This entry does not exist in our records as of yet ');
           }
           return response.json();
         })
