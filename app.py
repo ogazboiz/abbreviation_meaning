@@ -764,7 +764,7 @@ def get_abbreviation(abbr):
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
     else:
-        return make_response(jsonify({'error': 'Abbreviation not found'}), 404)
+        return make_response(jsonify({'error': 'This entry does not exist in our records as of yet :( \n\n1. You can help us add this by creating a GitHub issue\n\n2. Or, you could fill out this feedback form and we will address the issue'}), 404)
 
 # Start the server
 if __name__ == '__main__':

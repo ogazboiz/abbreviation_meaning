@@ -62,9 +62,10 @@
     .content {
       width: 90%;
     }
-    .content-row{
+    .content-row2{
       padding-bottom: 60px;
     }
+    
 
     .search {
       margin: auto;
@@ -101,7 +102,12 @@
       margin-top: 10px;
       font-weight: bold;
     }
-
+    #result a{
+      color: #ACD2ED;
+      text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-color: #ACD2ED;
+    }
     #error {
       color: red;
       font-weight: bold;
@@ -148,7 +154,27 @@
       transform: rotate(10deg);
       background-color: #0A210F;
     }
-    
+    footer a{
+      color: #ACD2ED;
+      text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-color: #ACD2ED;
+    }
+    @media (min-width: 576px){
+      .twitter-tail{
+        display:none;
+      }
+      .twi-body .twitter{
+      border: 5px solid #ACD2ED;
+      width: 90%;
+      height: 240px;
+      margin: auto;
+      transform: rotate(0deg);
+    }
+    .tweet{
+      padding-top: 30px;
+    }
+    }
 
     @media (max-width: 767.98px) {
       .imagess {
@@ -217,16 +243,20 @@
         <p style="font-size: 14px; color: #99AA38;" class="content">Abbreviations are currently one-way. For instance, the translation of Idk is merely "I don't know," not the other way around.</p>
       </div>
       <div class="col col-lg-6 col-sm-12">
-        <div class="text-center search-content ">
+        <div class="search-content ">
           <div class="d-flex">
-            <input type="text" id="abbreviation" class="abbreviation" placeholder=" Enter an abbreviation" class="search">
+            <input type="text" id="abbreviation" class="abbreviation text-center " placeholder=" Enter an abbreviation" class="search">
             
             <button id="convertBtn" class="btn  text-center btnStyle " type="button">Find</button>
           </div>
-          <div id="result" class="text-center"></div>
-          <div id="error" class="h5"></div>
+          <div id="result"></div>
+          <div id="error" style="font-size: 15px;">
+            
+          </div>
         </div>
+        
       </div>
+      <h2 class="text-center" style="color: #99AA38; padding-bottom: 40px;">more abbreviation coming soon...</h2>
     </div>
     <div class="row content-row2">
       <div class="col col-lg-6 col-sm-12">
@@ -234,13 +264,23 @@
           An open source <span style="color: #E1E289;">slang</span>  dictionary is called <span style="color: #E1E289;">Abbreive (A-brei-ve)</span>.for the community, and curated by the community.</p>
       </div>
       <div class="col col-lg-6 col-sm-12 twi-body">
-        <div class="twitter"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt="" class="h-12 w-12 rounded-full"><div><a href="https://twitter.com/Bayo_6?s=20" class="text-purple dark:text-deeppurple"><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
+        <div class="twitter"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt=""><div><a href="https://twitter.com/Bayo_6?s=20" class=""><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
       </div>
     </div>
+    <div class="row">
+      <div class="col col-lg-6 col-sm-12 twi-body">
+        <div class="twitter "><div class="twitter-head text-center"><img src="/assets/ogazboiz.jpg" alt=""><div><a href="https://twitter.com/Bayo_6?s=20" class=""><p class="h3 text-start">Ogazboiz</p><p class="h6 text-start">@AkpoloOgaga</p></a></div></div><p class="h5" style="margin-left: 10px; color: #E1E289;">Do you find yourself googling the meaning of slang like hmu, lgtm, lfg etc ?</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p></div>
+      </div>
+      <div class="col col-lg-6 col-sm-12 d-flex" style="align-items: center;">
+        <p style="font-size: 30px; padding-left: 90px;" class="text-start tweet">
+          Between discussions, searching the internet is quickly replacing previous practices.</p>
+      </div>
+      
+    </div>
   </div>
-  <footer style="padding-top: 50px;">
-    <h4 class="text-center">Found something odd? Create a github issue.</h4>
-    <h6 class="text-center">&copy; Made with ❤️ by ogazboiz 🚀👽 and the community 😊</h6>
+  <footer style="padding-top: 80px;">
+    <h5 class="text-center" style="color: #99AA38;">Found something odd ?&ensp; <a href="https://github.com/ogazboiz/abbreviation_meaning">Create a github issue.</a> </h5>
+    <h6 class="text-center" style="color: #99AA38;">&copy; Made with ❤️ by ogazboiz 🚀👽 and the community 😊</h6>
     
   </footer>
   <script>
@@ -263,7 +303,7 @@
       fetch(`http://localhost:7000/api/abbreviation/${encodeURIComponent(abbreviation)}`)
         .then(response => {
           if (!response.ok) {
-            throw new Error('This entry does not exist in our records as of yet ');
+            throw new Error('<span style="color: #acd2ed;">This entry does not exist in our records as of yet :(</span><br><br>1. You can help us add this by <a href="https://github.com/ogazboiz/abbreviation_meaning" style="color: #acd2ed;text-decoration: none;text-decoration-line: none;text-decoration-color: #ACD2ED;">Create a github issue.</a><br>2. Or, you could fill out this feedback form and we will address the issue');
           }
           return response.json();
         })
@@ -272,7 +312,7 @@
         })
         .catch(error => {
           resultDiv.textContent = '';
-          errorDiv.textContent = error.message;
+          errorDiv.innerHTML = error.message;
         });
     }
 
@@ -288,4 +328,5 @@
 
   
 </body>
+
 </html>
