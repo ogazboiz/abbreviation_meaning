@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, make_response
+from flask import Flask, jsonify, request, make_response, render_template
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -752,7 +752,9 @@ abbreviations = {
     'ZYXWVU': 'Zyxel Wireless Vpn Router',
     'MF': 'MotherFucker'
 }
-
+@app.route('/')
+def index():
+    return render_template('index.html')
 # API endpoint to handle abbreviation requests
 @app.route('/api/abbreviation/<abbr>')
 def get_abbreviation(abbr):
@@ -768,4 +770,4 @@ def get_abbreviation(abbr):
 
 # Start the server
 if __name__ == '__main__':
-    app.run( debug=True, port=7000)
+    app.run( debug=True, port=5000)

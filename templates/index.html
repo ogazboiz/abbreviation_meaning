@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://kit.fontawesome.com/ba9ed74b87.js" crossorigin="anonymous"></script>
   <style>
     body {
@@ -229,11 +230,11 @@
     <h1 class="display-1">Writing on The Internet</h1>
     <h1 class="display-3 dis">Slang change all the time JSYK</h1>
     <div class="text-center imagess">
-      <img src="/assets/1.png" alt="btw" style="transform: rotate(-10deg)" >
-      <img src="/assets/2.png" alt="btw" style="transform: rotate(10deg)">
-      <img src="/assets/3.png" alt="btw" style="transform: rotate(15deg)">
-      <img src="/assets/4.png" alt="btw" style="transform: rotate(5deg)">
-      <img src="/assets/5.png" alt="btw" style="transform: rotate(-8deg)">
+      <img src="/static/assets/1.png" alt="btw" style="transform: rotate(-10deg)" >
+      <img src="/static/assets/2.png" alt="btw" style="transform: rotate(10deg)">
+      <img src="/static/assets/3.png" alt="btw" style="transform: rotate(15deg)">
+      <img src="/static/assets/4.png" alt="btw" style="transform: rotate(5deg)">
+      <img src="/static/assets/5.png" alt="btw" style="transform: rotate(-8deg)">
     </div>
     <div class="row content-row">
       <div class="col col-lg-6 col-sm-12">
@@ -264,12 +265,12 @@
           An open source <span style="color: #E1E289;">slang</span>  dictionary is called <span style="color: #E1E289;">Abbreive (A-brei-ve)</span>.for the community, and curated by the community.</p>
       </div>
       <div class="col col-lg-6 col-sm-12 twi-body">
-        <div class="twitter"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt=""><div><a href="https://twitter.com/Bayo_6?s=20" class=""><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
+        <div class="twitter"><div class="twitter-head text-center"><img src="/static/assets/yomi.jpg" alt=""><div><a href="https://twitter.com/Bayo_6?s=20" class=""><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
       </div>
     </div>
     <div class="row">
       <div class="col col-lg-6 col-sm-12 twi-body">
-        <div class="twitter "><div class="twitter-head text-center"><img src="/assets/ogazboiz.jpg" alt=""><div><a href="https://twitter.com/Bayo_6?s=20" class=""><p class="h3 text-start">Ogazboiz</p><p class="h6 text-start">@AkpoloOgaga</p></a></div></div><p class="h5" style="margin-left: 10px; color: #E1E289;">Do you find yourself googling the meaning of slang like hmu, lgtm, lfg etc ?</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p></div>
+        <div class="twitter "><div class="twitter-head text-center"><img src="/static/assets/ogazboiz.jpg" alt=""><div><a href="https://twitter.com/AkpoloOgaga?s=20" class=""><p class="h3 text-start">Ogazboiz</p><p class="h6 text-start">@AkpoloOgaga</p></a></div></div><p class="h5" style="margin-left: 10px; color: #E1E289;">Do you find yourself googling the meaning of slang like hmu, lgtm, lfg etc ?</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p></div>
       </div>
       <div class="col col-lg-6 col-sm-12 d-flex" style="align-items: center;">
         <p style="font-size: 30px; padding-left: 90px;" class="text-start tweet">
@@ -300,7 +301,7 @@
 
       errorDiv.textContent = '';
 
-      fetch(`http://localhost:7000/api/abbreviation/${encodeURIComponent(abbreviation)}`)
+      fetch(`/api/abbreviation/${encodeURIComponent(abbreviation)}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('<span style="color: #acd2ed;">This entry does not exist in our records as of yet :(</span><br><br>1. You can help us add this by <a href="https://github.com/ogazboiz/abbreviation_meaning" style="color: #acd2ed;text-decoration: none;text-decoration-line: none;text-decoration-color: #ACD2ED;">Create a github issue.</a><br>2. Or, you could fill out this feedback form and we will address the issue');

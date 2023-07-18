@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Abbreviation Converter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/ba9ed74b87.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: xx-large;
+      color: #ACD2ED;
+      padding-top: 20px;
+      background-color: #0A210F;
+    }
+    .btnStyle{
+      margin-left: 10px;
+      background-color: #ACD2ED;
+      color: #0A210F;
+      font-size: 22px;
+      font-weight: 400;
+      border-radius: 10px;
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Lobster', cursive;
+    }
+    img {
+      padding-right: 10px;
+    }
+    .imagess {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      animation: moveRightLeft 20s linear infinite;
+    }
+
+    @keyframes moveRightLeft {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-10%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .abbreviation {
+      border: 5px solid #ACD2ED;
+      border-radius: 5px;
+    }
+
+    .cont {
+      padding-top: 50px;
+      margin: 0 auto;
+      width: 70%;
+    }
+
+    .content {
+      width: 90%;
+    }
+    .content-row2{
+      padding-bottom: 60px;
+    }
+    
+
+    .search {
+      margin: auto;
+     
+      
+    }
+    .search-content{
+      margin: 20% 0;
+    }
+
+
+
+    .form-group {
+      margin-bottom: 9px;
+    }
+
+    .dis {
+      color: #E1E289;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    #result a{
+      color: #ACD2ED;
+      text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-color: #ACD2ED;
+    }
+    #error {
+      color: red;
+      font-weight: bold;
+    }
+    .twi-body .twitter{
+      border: 5px solid #ACD2ED;
+      width: 120%;
+      height: 240px;
+      margin: auto;
+      transform: rotate(5deg);
+    }
+    .twitter-head{
+      display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 25px;
+    }
+    .twitter-head img{
+      height: 12%;
+      width: 12%;
+      border-radius: 50%;
+    }
+    .twitter-head p {
+
+      color: #ACD2ED;
+      text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-color: #ACD2ED;
+    
+    }
+    .twitter-head a {
+      color: #ACD2ED;
+      text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-color: #ACD2ED;
+    
+    }
+    .twitter-tail{
+      border: 5px solid #ACD2ED;
+      width: 30%;
+      position: relative;
+      top: -270px;
+      left: 70%;
+      transform: rotate(10deg);
+      background-color: #0A210F;
+    }
+    footer a{
+      color: #ACD2ED;
+      text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-color: #ACD2ED;
+    }
+    /* @media (min-width: 576px){
+      .twitter-tail{
+        display:none;
+      }
+      .twi-body .twitter{
+      border: 5px solid #ACD2ED;
+      width: 90%;
+      height: 240px;
+      margin: auto;
+      transform: rotate(0deg);
+    }
+    .tweet{
+      padding-top: 30px;
+    }
+    } */
+
+    @media (max-width: 767.98px) {
+      .imagess {
+        display: flex;
+        justify-content: center;
+      }
+      @keyframes moveRightLeft {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-4%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+      .imagess img {
+        max-width: 70px;
+        margin: 0 5px;
+      }
+      .twitter-tail{
+        display:none;
+      }
+      .twi-body .twitter{
+      border: 5px solid #ACD2ED;
+      width: 90%;
+      height: 240px;
+      margin: auto;
+      transform: rotate(0deg);
+
+    }
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <nav class="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="font-family: 'Lobster', cursive; color: #acd2ed; padding: 0 20px;" ><h1>Abbreive</h1></a>
+      
+      <section class="d-flex" style="padding: 0 20px;">
+        <a href="https://github.com/ogazboiz"><i class="fa-brands fa-github" style="color: #acd2ed;"></i></a>
+      </section>
+    </div>
+  </nav>
+</head>
+<body>
+  
+  <div class="cont container-fluid">
+    <h1 class="display-1">Writing on The Internet</h1>
+    <h1 class="display-3 dis">Slang change all the time JSYK</h1>
+    <div class="text-center imagess">
+      <img src="/static/assets/1.png" alt="btw" style="transform: rotate(-10deg)" >
+      <img src="/static/assets/2.png" alt="btw" style="transform: rotate(10deg)">
+      <img src="/static/assets/3.png" alt="btw" style="transform: rotate(15deg)">
+      <img src="/static/assets/4.png" alt="btw" style="transform: rotate(5deg)">
+      <img src="/static/assets/5.png" alt="btw" style="transform: rotate(-8deg)">
+    </div>
+    <div class="row content-row">
+      <div class="col col-lg-6 col-sm-12">
+        <p style="font-size: 35px;" class="content">
+          <span style="color: #E1E289;">Start by typing a slang term</span>, and our dictionary will generate an acronym.</span>
+        </p>
+        <p style="font-size: 14px; color: #99AA38;" class="content">Abbreviations are currently one-way. For instance, the translation of Idk is merely "I don't know," not the other way around.</p>
+      </div>
+      <div class="col col-lg-6 col-sm-12">
+        <div class="search-content ">
+          <div class="d-flex">
+            <input type="text" id="abbreviation" class="abbreviation text-center " placeholder=" Enter an abbreviation" class="search">
+            
+            <button id="convertBtn" class="btn  text-center btnStyle " type="button">Find</button>
+          </div>
+          <div id="result"></div>
+          <div id="error" style="font-size: 15px;">
+            
+          </div>
+        </div>
+        
+      </div>
+      <h2 class="text-center" style="color: #99AA38; padding-bottom: 40px;">more abbreviation coming soon...</h2>
+    </div>
+    <div class="row content-row2">
+      <div class="col col-lg-6 col-sm-12">
+        <p style="font-size: 35px;" class="content text-center">
+          An open source <span style="color: #E1E289;">slang</span>  dictionary is called <span style="color: #E1E289;">Abbreive (A-brei-ve)</span>.for the community, and curated by the community.</p>
+      </div>
+      <div class="col col-lg-6 col-sm-12 twi-body">
+        <div class="twitter"><div class="twitter-head text-center"><img src="/static/assets/yomi.jpg" alt=""><div><a href="https://twitter.com/Bayo_6?s=20" class=""><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-lg-6 col-sm-12 twi-body">
+        <div class="twitter "><div class="twitter-head text-center"><img src="/static/assets/ogazboiz.jpg" alt=""><div><a href="https://twitter.com/AkpoloOgaga?s=20" class=""><p class="h3 text-start">Ogazboiz</p><p class="h6 text-start">@AkpoloOgaga</p></a></div></div><p class="h5" style="margin-left: 10px; color: #E1E289;">Do you find yourself googling the meaning of slang like hmu, lgtm, lfg etc ?</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p></div>
+      </div>
+      <div class="col col-lg-6 col-sm-12 d-flex" style="align-items: center;">
+        <p style="font-size: 30px; padding-left: 90px;" class="text-start tweet">
+          Between discussions, searching the internet is quickly replacing previous practices.</p>
+      </div>
+      
+    </div>
+  </div>
+  <footer style="padding-top: 80px;">
+    <h5 class="text-center" style="color: #99AA38;">Found something odd ?&ensp; <a href="https://github.com/ogazboiz/abbreviation_meaning">Create a github issue.</a> </h5>
+    <h6 class="text-center" style="color: #99AA38;">&copy; Made with ❤️ by ogazboiz 🚀👽 and the community 😊</h6>
+    
+  </footer>
+  <script>
+    const convertBtn = document.getElementById('convertBtn');
+    const abbreviationInput = document.getElementById('abbreviation');
+    const resultDiv = document.getElementById('result');
+    const errorDiv = document.getElementById('error');
+
+    function searchAbbreviation() {
+      const abbreviation = abbreviationInput.value.trim();
+      
+      if (abbreviation === '') {
+        errorDiv.textContent = 'Please enter an abbreviation.';
+        resultDiv.textContent = '';
+        return;
+      }
+
+      errorDiv.textContent = '';
+
+      fetch(`/api/abbreviation/${encodeURIComponent(abbreviation)}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('<span style="color: #acd2ed;">This entry does not exist in our records as of yet :(</span><br><br>1. You can help us add this by <a href="https://github.com/ogazboiz/abbreviation_meaning" style="color: #acd2ed;text-decoration: none;text-decoration-line: none;text-decoration-color: #ACD2ED;">Create a github issue.</a><br>2. Or, you could fill out this feedback form and we will address the issue');
+          }
+          return response.json();
+        })
+        .then(data => {
+          resultDiv.textContent = `Meaning: ${data.meaning}`;
+        })
+        .catch(error => {
+          resultDiv.textContent = '';
+          errorDiv.innerHTML = error.message;
+        });
+    }
+
+    convertBtn.addEventListener('click', searchAbbreviation);
+
+    abbreviationInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        searchAbbreviation();
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  
+</body>
+
+</html>
