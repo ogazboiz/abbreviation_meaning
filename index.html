@@ -106,11 +106,12 @@
       color: red;
       font-weight: bold;
     }
-    .twitter{
+    .twi-body .twitter{
       border: 5px solid #ACD2ED;
       width: 120%;
       height: 240px;
       margin: auto;
+      transform: rotate(5deg);
     }
     .twitter-head{
       display: flex;
@@ -173,10 +174,13 @@
       .twitter-tail{
         display:none;
       }
-      .twitter{
+      .twi-body .twitter{
       border: 5px solid #ACD2ED;
-      width: 70%;
+      width: 90%;
       height: 240px;
+      margin: auto;
+      transform: rotate(0deg);
+
     }
     }
   </style>
@@ -215,7 +219,8 @@
       <div class="col col-lg-6 col-sm-12">
         <div class="text-center search-content ">
           <div class="d-flex">
-            <input type="text" id="abbreviation" class="abbreviation" placeholder="Enter an abbreviation" class="search">
+            <input type="text" id="abbreviation" class="abbreviation" placeholder=" Enter an abbreviation" class="search">
+            
             <button id="convertBtn" class="btn  text-center btnStyle " type="button">Find</button>
           </div>
           <div id="result" class="text-center"></div>
@@ -228,8 +233,8 @@
         <p style="font-size: 35px;" class="content text-center">
           An open source <span style="color: #E1E289;">slang</span>  dictionary is called <span style="color: #E1E289;">Abbreive (A-brei-ve)</span>.for the community, and curated by the community.</p>
       </div>
-      <div class="col col-lg-6 col-sm-12">
-        <div class="twitter" style="transform: rotate(5deg)"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt="" class="h-12 w-12 rounded-full"><div><a href="https://twitter.com/Bayo_6?s=20" class="text-purple dark:text-deeppurple"><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
+      <div class="col col-lg-6 col-sm-12 twi-body">
+        <div class="twitter"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt="" class="h-12 w-12 rounded-full"><div><a href="https://twitter.com/Bayo_6?s=20" class="text-purple dark:text-deeppurple"><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@0gazboiz and @AkpoloOgaga</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
       </div>
     </div>
   </div>
