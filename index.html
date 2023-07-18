@@ -14,6 +14,9 @@
       color: #ACD2ED;
       background-color: #0A210F;
     }
+    .btnStyle{
+      margin-left: 10px;
+    }
     h1 {
       text-align: center;
       font-family: 'Lobster', cursive;
@@ -52,10 +55,21 @@
     .content {
       width: 90%;
     }
+    .content-row{
+      padding-bottom: 60px;
+    }
 
     .search {
       margin: auto;
     }
+    .search-content{
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin: 20% 0;
+    }
+
+
 
     .form-group {
       margin-bottom: 9px;
@@ -86,6 +100,48 @@
       color: red;
       font-weight: bold;
     }
+    .twitter{
+      border: 5px solid #ACD2ED;
+      width: 120%;
+      height: 240px;
+      margin: auto;
+    }
+    .twitter-head{
+      display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 25px;
+    }
+    .twitter-head img{
+      height: 12%;
+      width: 12%;
+      border-radius: 50%;
+    }
+    .twitter-head p {
+
+      color: #ACD2ED;
+      text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-color: #ACD2ED;
+    
+    }
+    .twitter-head a {
+      color: #ACD2ED;
+      text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-color: #ACD2ED;
+    
+    }
+    .twitter-tail{
+      border: 5px solid #ACD2ED;
+      width: 30%;
+      position: relative;
+      top: -270px;
+      left: 70%;
+      transform: rotate(10deg);
+      background-color: #0A210F;
+    }
+    
 
     @media (max-width: 767.98px) {
       .imagess {
@@ -108,6 +164,14 @@
         max-width: 70px;
         margin: 0 5px;
       }
+      .twitter-tail{
+        display:none;
+      }
+      .twitter{
+      border: 5px solid #ACD2ED;
+      width: 70%;
+      height: 240px;
+    }
     }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,18 +191,27 @@
     </div>
     <div class="row content-row">
       <div class="col col-lg-6 col-sm-12">
-        <p style="font-size: 25px;" class="content">
-          Start by typing a slang term, and our dictionary will generate an acronym.
+        <p style="font-size: 35px;" class="content">
+          <span style="color: #E1E289;">Start by typing a slang term</span>, and our dictionary will generate an acronym.</span>
         </p>
-        <p style="font-size: 14px;" class="content">Abbreviations are currently one-way. For instance, the translation of Idk is merely "I don't know," not the other way around.</p>
+        <p style="font-size: 14px; color: #99AA38;" class="content">Abbreviations are currently one-way. For instance, the translation of Idk is merely "I don't know," not the other way around.</p>
       </div>
       <div class="col col-lg-6 col-sm-12">
-        <div class="text-center">
+        <div class="text-center search-content">
           <input type="text" id="abbreviation" class="abbreviation" placeholder="Enter an abbreviation" class="search">
           <button id="convertBtn" class="btn btn-primary text-center btnStyle" type="button">Convert</button>
           <div id="result" class="text-center"></div>
           <div id="error"></div>
         </div>
+      </div>
+    </div>
+    <div class="row content-row2">
+      <div class="col col-lg-6 col-sm-12">
+        <p style="font-size: 35px;" class="content text-center">
+          An open source slang dictionary is called Abbreive (A-brei-ve).for the community, and curated by the community.</p>
+      </div>
+      <div class="col col-lg-6 col-sm-12">
+        <div class="twitter"><div class="twitter-head text-center"><img src="/assets/yomi.jpg" alt="" class="h-12 w-12 rounded-full"><div><a href="https://twitter.com/Nateemerson/status/1567566265719599105?s=20&amp;t=QAOQu1feHo07evNBHFvAIQ" class="text-purple dark:text-deeppurple"><p class="h3 text-start">Bayo</p><p class="h6 text-start">@Bayo_6</p></a></div></div><p class="h6" style="margin-left: 20px;"><span style="color: #99AA38;">Replying to</span> <span class="h5">@DunsinWebDev and @njongemy</span></p><p class="h5" style="margin-left: 20px; color: #E1E289;">idk wtf ur on about... ICYMI IMHO RTFM, KISS, SHIT or GTFO.</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p><div class="twitter-tail h4"><p class="h5 " style="margin-left: 10px; color: #E1E289;">Reading shouldn't feel like work.</p></div></div>
       </div>
     </div>
   </div>
@@ -177,5 +250,7 @@
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  
 </body>
 </html>
