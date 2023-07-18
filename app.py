@@ -9,6 +9,7 @@ abbreviations = {
     'HTML': 'HyperText Markup Language',
     'CSS': 'Cascading Style Sheets',
     'JS': 'JavaScript',
+    'LOML': 'Love of my life',
     'LOL': 'Laugh Out Loud',
     'API': 'Application Programming Interface',
     'PDF': 'Portable Document Format',
