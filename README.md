@@ -43,13 +43,13 @@ Navigate to the project directory:
     python3 -m venv venv
     source venv/bin/activate
 
-#Install the required dependencies:
+## Install the required dependencies:
 
     ```shell
 
     pip install -r requirements.txt
 
-#Usage
+## Usage
 1. Start the Flask server:
 
     ```shell
@@ -61,6 +61,6 @@ Navigate to the project directory:
 
 4. The corresponding full meaning of the abbreviation will be displayed below the input field.
 
-##Contributing
+## Contributing
 
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
