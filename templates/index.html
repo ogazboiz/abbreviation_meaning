@@ -56,7 +56,7 @@
 
     .cont {
       padding-top: 50px;
-      margin: 0 auto;
+      margin: 0 8rem;
       width: 70%;
     }
 
@@ -155,12 +155,16 @@
       transform: rotate(10deg);
       background-color: #0A210F;
     }
+    .tweet{
+      padding-left: 90px;
+    }
     footer a{
       color: #ACD2ED;
       text-decoration: none;
       text-decoration-line: none;
       text-decoration-color: #ACD2ED;
     }
+
     /* @media (min-width: 576px){
       .twitter-tail{
         display:none;
@@ -176,8 +180,7 @@
       padding-top: 30px;
     }
     } */
-
-    @media (max-width: 767.98px) {
+    @media only screen and (max-device-width: 480px) {
       .imagess {
         display: flex;
         justify-content: center;
@@ -193,8 +196,27 @@
         transform: translateX(0);
       }
     }
+    .content{
+      width: 100%;
+      text-align: center;
+    }
+    .tweet {
+    padding-top: 10px;
+    padding-left: 0;
+    }
+    .break {
+    flex-basis: 100%;
+    height: 0;
+    }
 
-      .imagess img {
+
+    .search-content {
+      margin: 20% 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      }
+    .imagess img {
         max-width: 70px;
         margin: 0 5px;
       }
@@ -209,7 +231,15 @@
       transform: rotate(0deg);
 
     }
+    #result{
+      margin-top: 30px;
+      font-weight: bold;
+      text-align: center;
+    } 
+    #error{
+      padding-left: 40px;
     }
+  }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -226,7 +256,7 @@
 </head>
 <body>
   
-  <div class="cont container-fluid">
+  <div class="cont container">
     <h1 class="display-1">Writing on The Internet</h1>
     <h1 class="display-3 dis">Slang change all the time JSYK</h1>
     <div class="text-center imagess">
@@ -244,13 +274,13 @@
         <p style="font-size: 14px; color: #99AA38;" class="content">Abbreviations are currently one-way. For instance, the translation of Idk is merely "I don't know," not the other way around.</p>
       </div>
       <div class="col col-lg-6 col-sm-12">
-        <div class="search-content ">
+        <div class="search-content">
           <div class="d-flex">
             <input type="text" id="abbreviation" class="abbreviation text-center " placeholder=" Enter an abbreviation" class="search">
             
             <button id="convertBtn" class="btn  text-center btnStyle " type="button">Find</button>
           </div>
-          <div id="result"></div>
+          <div id="result" class="break"></div>
           <div id="error" style="font-size: 15px;">
             
           </div>
@@ -272,8 +302,8 @@
       <div class="col col-lg-6 col-sm-12 twi-body">
         <div class="twitter "><div class="twitter-head text-center"><img src="/static/assets/ogazboiz.jpg" alt=""><div><a href="https://twitter.com/AkpoloOgaga?s=20" class=""><p class="h3 text-start">Ogazboiz</p><p class="h6 text-start">@AkpoloOgaga</p></a></div></div><p class="h5" style="margin-left: 10px; color: #E1E289;">Do you find yourself googling the meaning of slang like hmu, lgtm, lfg etc ?</p><p class="h6" style="margin-left: 20px;">18:31 . 07 Sep 22 . <span class="h7"> Twitter Web App</span></p></div>
       </div>
-      <div class="col col-lg-6 col-sm-12 d-flex" style="align-items: center;">
-        <p style="font-size: 30px; padding-left: 90px;" class="text-start tweet">
+      <div class="col col-lg-6 col-sm-12" style="align-items: center;">
+        <p style="font-size: 35px; " class="text-center tweet">
           Between discussions, searching the internet is quickly replacing previous practices.</p>
       </div>
       
