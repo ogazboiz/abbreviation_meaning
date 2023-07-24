@@ -55,7 +55,7 @@ Navigate to the project directory:
     ```shell
     python app.py
 
-2. Open your web browser and navigate to http://localhost:5000.
+2. Open your web browser and navigate to http://localhost:5000
 
 3. Enter an abbreviation in the input field and click the "Find" button.
 
